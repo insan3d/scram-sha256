@@ -1,4 +1,4 @@
-# pg_scram-sha256
+# scram-sha256
 
 Generate and verify PostgreSQL-compatible SCRAM-SHA-256 password verifiers in exactly the same format that PostgreSQL stores inside `pg_authid` and that PgBouncer expects inside `userlist.txt`.
 
