@@ -21,11 +21,7 @@ from contextlib import suppress
 from hashlib import pbkdf2_hmac, sha256
 from os import urandom
 
-__prog__ = "scram-sha256"
-__version__ = "1.0.0"
-__status__ = "Release"
-__author__ = "Alexander Pozlevich"
-__email__ = "apozlevich@gmail.com"
+from . import __author__, __email__, __prog__, __status__, __version__
 
 ITERATIONS = 4096
 
@@ -128,7 +124,7 @@ def parse_iterations(i: int) -> int:
     if not isinstance(i, int) or i < 1:  # pyright: ignore[reportUnnecessaryIsInstance]
         msg = "PBKDF2 iterations count must be positive integer"
         raise ArgumentTypeError(msg)
-    
+
     if i < ITERATIONS:
         msg = f"PBKDF2 iterations count below {ITERATIONS} is discouraged"
         raise ArgumentTypeError(msg)
@@ -194,7 +190,10 @@ def _parse_cli_args() -> Namespace:
     )
 
     cli_parser.add_argument(
-        "-q", "--quiet", action="store_true", help="exit quietly",
+        "-q",
+        "--quiet",
+        action="store_true",
+        help="exit quietly",
     )
 
     cli_parser.add_argument(
