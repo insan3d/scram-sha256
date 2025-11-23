@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scram-sha256"
+version = "1.0.0"
+description = "Generate and verify PostgreSQL-compatible SCRAM-SHA-256 password verifiers."
+keywords = [
+    "postgresql",
+    "scram",
+    "pgbouncer",
+    "authentication",
+    "password",
+    "security",
+    "pbkdf2",
+    "crypto",
+]
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Alexander Pozlevich", email = "apozlevich@gmail.com" },
+]
+requires-python = ">=3.11"
+
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+
+    "Environment :: Console",
+    "Environment :: Other Environment",
+
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Developers",
+
+    "Topic :: Security",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Database",
+    "Topic :: Database :: Front-Ends",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/insan3d/scram-sha256/"
+Repository = "https://github.com/insan3d/scram-sha256/"
+Issues = "https://github.com/insan3d//scram-sha256/issues"
+
+[project.scripts]
+scram-sha256 = "scram_sha256.__main__:main"
+
+[tool.setuptools]
+include-package-data = false
