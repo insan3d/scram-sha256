@@ -7,7 +7,7 @@ catalog (via `ALTER USER ... PASSWORD`) or into PgBouncer's `userlist.txt`.
 """
 
 __prog__ = "scram-sha256"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __status__ = "Release"
 __author__ = "Alexander Pozlevich"
 __email__ = "apozlevich@gmail.com"

@@ -46,7 +46,7 @@ def scram_sha256(password: bytes, iterations: int, salt: bytes | None) -> str:
 
     Returns:
         str: A SCRAM-SHA-256 verifier formatted as:
-        `SCRAM-SHA-256$<iterations>:<salt_b64>$<stored_key_b64>$<server_key_b64>`
+        `SCRAM-SHA-256$<iterations>:<salt_b64>$<stored_key_b64>:<server_key_b64>`
     """
 
     if salt is None:
@@ -61,7 +61,7 @@ def scram_sha256(password: bytes, iterations: int, salt: bytes | None) -> str:
     stored_b64 = b64encode(stored_key).decode(encoding="ascii")
     server_b64 = b64encode(server_key).decode(encoding="ascii")
 
-    return f"SCRAM-SHA-256${iterations}:{salt_b64}${stored_b64}${server_b64}"
+    return f"SCRAM-SHA-256${iterations}:{salt_b64}${stored_b64}:{server_b64}"
 
 
 def verify_scram_sha256(password: str, verifier: str) -> bool:
@@ -96,8 +96,8 @@ def verify_scram_sha256(password: str, verifier: str) -> bool:
         raise ValueError("Unsupported SCRAM scheme (expected SCRAM-SHA-256).")
 
     try:
-        iter_part, stored_b64, _server_b64 = body.split("$")
-        iterations_str, salt_b64 = iter_part.split(":")
+        iterations_str, salt_stored_b64, _server_b64 = body.split(":")
+        salt_b64, stored_b64 = salt_stored_b64.split("$")
 
     except ValueError:
         raise ValueError("Malformed SCRAM verifier structure.")
