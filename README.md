@@ -15,7 +15,7 @@ scram-sha256 mypassword
 Example output:
 
 ```plain
-SCRAM-SHA-256$4096:jJtPFbKh8Kbl0JUdhJLiRg==$rLZuvwE5U7S05GbFizTJt8vlTblsBF0o9g1wxI6O8IU=$Bg4xIDb0tsYY6MZU1eQDp6ccq4ImjgJ63NMI0rKq/Zs=
+SCRAM-SHA-256$4096:jJtPFbKh8Kbl0JUdhJLiRg==$rLZuvwE5U7S05GbFizTJt8vlTblsBF0o9g1wxI6O8IU=:Bg4xIDb0tsYY6MZU1eQDp6ccq4ImjgJ63NMI0rKq/Zs=
 ```
 
 #### With custom salt (HEX):

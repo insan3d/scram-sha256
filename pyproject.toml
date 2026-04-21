@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pg-scram-sha256"
-version = "1.0.0"
+version = "1.0.1"
 description = "Generate and verify PostgreSQL-compatible SCRAM-SHA-256 password verifiers."
 keywords = [
     "postgresql",
